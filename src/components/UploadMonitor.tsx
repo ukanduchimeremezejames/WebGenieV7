@@ -157,7 +157,7 @@ export function UploadMonitor() {
       </div>
       
       {/* Role-Based Access Indicators */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-white rounded-lg p-4 border border-gray-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
@@ -172,7 +172,7 @@ export function UploadMonitor() {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg p-4 border border-gray-200">
+        {/* <div className="bg-white rounded-lg p-4 border border-gray-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
               <Shield className="w-4 h-4 text-green-600" />
@@ -184,7 +184,7 @@ export function UploadMonitor() {
             <Users className="w-4 h-4 text-gray-400" />
             <span className="text-sm text-gray-700">Admin, PI, Curators</span>
           </div>
-        </div>
+        </div> */}
         
         <div className="bg-white rounded-lg p-4 border border-gray-200">
           <div className="flex items-center gap-3 mb-2">

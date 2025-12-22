@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { DatasetCard } from './DatasetCard';
 import { Button } from './Button';
 import { Search, SlidersHorizontal } from 'lucide-react';
+import AnimatedCounter from "../components/AnimatedCounter";
+import { Database, Globe, Layers, Boxes, Dna, Microscope, GitFork, PlayCircle } from "lucide-react";
+
+
+
 
 const allDatasets = [
   {
@@ -152,6 +157,14 @@ const allDatasets = [
 ];
 
 export function DatasetsListing() {
+  const totalGenes = allDatasets.reduce((sum, d) => sum + d.genes, 0);
+  const totalCells = allDatasets.reduce((sum, d) => sum + d.cells, 0);
+  const totalEdges = allDatasets.reduce((sum, d) => sum + d.edges, 0);
+
+  // Placeholder — update when you have "runs"
+  const totalRuns = 0;
+
+  
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedOrganism, setSelectedOrganism] = useState('all');
@@ -165,6 +178,8 @@ export function DatasetsListing() {
     const matchesType = selectedType === 'all' || dataset.type === selectedType;
     const matchesSource = selectedSource === 'all' || dataset.source === selectedSource;
     
+  
+
     return matchesSearch && matchesOrganism && matchesType && matchesSource;
   });
 
@@ -175,6 +190,174 @@ export function DatasetsListing() {
         <h1 className="text-gray-900 mb-2">All Datasets</h1>
         <p className="text-gray-600">Browse and explore all available BEELINE datasets</p>
       </div>
+
+      {/* Stats */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <AnimatedCounter title="Total Datasets" value={allDatasets.length} />
+        <AnimatedCounter title="Organisms" value={new Set(allDatasets.map(d => d.organism)).size} />
+        <AnimatedCounter title="Types" value={new Set(allDatasets.map(d => d.type)).size} />
+        <AnimatedCounter title="Sources" value={new Set(allDatasets.map(d => d.source)).size} />
+      </div> */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+              <Database className="w-4 h-4 text-blue-600" />
+            </div>
+            <h4 className="text-gray-900">Total Datasets</h4>
+          </div>
+          <p className="text-sm text-gray-600 mb-2">Number of datasets in the system</p>
+          <AnimatedCounter title="" value={allDatasets.length} className="mt-2" />
+        </div>
+        <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+              <Globe className="w-4 h-4 text-green-600" />
+            </div>
+            <h4 className="text-gray-900">Organisms</h4>
+          </div>
+          <p className="text-sm text-gray-600 mb-2">Unique organisms represented</p>
+          <AnimatedCounter title="" value={new Set(allDatasets.map(d => d.organism)).size} className="mt-2" />
+        </div>
+        <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+              <Layers className="w-4 h-4 text-purple-600" />
+            </div>
+            <h4 className="text-gray-900">Types</h4>
+          </div>
+          <p className="text-sm text-gray-600 mb-2">Dataset categories available</p>
+          <AnimatedCounter title="" value={new Set(allDatasets.map(d => d.type)).size} className="mt-2" />
+        </div>
+        <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-8 rounded-lg bg-yellow-100 flex items-center justify-center">
+              <FileStack className="w-4 h-4 text-yellow-600" />
+            </div>
+            <h4 className="text-gray-900">Sources</h4>
+          </div>
+          <p className="text-sm text-gray-600 mb-2">Distinct dataset sources</p>
+          <AnimatedCounter title="" value={new Set(allDatasets.map(d => d.source)).size} className="mt-2" />
+        </div>
+
+      </div> */}
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+        <Database className="w-4 h-4 text-blue-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Total Datasets</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Number of datasets in the system</p>
+    <AnimatedCounter title="" value={allDatasets.length} className="mt-2" />
+  </div>
+
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+        <Globe className="w-4 h-4 text-green-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Organisms</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Unique organisms represented</p>
+    <AnimatedCounter
+      title=""
+      value={new Set(allDatasets.map(d => d.organism)).size}
+      className="mt-2"
+    />
+  </div>
+
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+        <Layers className="w-4 h-4 text-purple-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Types</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Dataset categories available</p>
+    <AnimatedCounter
+      title=""
+      value={new Set(allDatasets.map(d => d.type)).size}
+      className="mt-2"
+    />
+  </div>
+
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-yellow-100 flex items-center justify-center">
+        <Boxes className="w-4 h-4 text-yellow-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Sources</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Distinct dataset sources</p>
+    <AnimatedCounter
+      title=""
+      value={new Set(allDatasets.map(d => d.source)).size}
+      className="mt-2"
+    />
+  </div>
+
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+  {/* Total Genes */}
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
+        <Dna className="w-4 h-4 text-red-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Total Genes</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Sum of all gene counts across datasets</p>
+    <AnimatedCounter title="" value={totalGenes} className="mt-2" />
+  </div>
+
+  {/* Total Cells */}
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+        <Microscope className="w-4 h-4 text-blue-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Total Cells</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Sum of all cell counts across datasets</p>
+    <AnimatedCounter title="" value={totalCells} className="mt-2" />
+  </div>
+
+  {/* Total Edges */}
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+        <GitFork className="w-4 h-4 text-purple-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Total Edges</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">Total regulatory interactions across datasets</p>
+    <AnimatedCounter title="" value={totalEdges} className="mt-2" />
+  </div>
+
+  {/* Total Runs */}
+  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+    <div className="flex items-center gap-3 mb-2">
+      <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+        <PlayCircle className="w-4 h-4 text-green-600" />
+      </div>
+      <h4 className="text-gray-900 font-medium">Total Runs</h4>
+    </div>
+    <p className="text-sm text-gray-600 mb-2">All algorithm executions stored in the system</p>
+    <AnimatedCounter title="" value={totalRuns} className="mt-2" />
+  </div>
+
+</div>
+
+
+
+
+
 
       {/* Search and Filters */}
       <div className="bg-white rounded-lg p-6 border border-gray-200 mb-6">

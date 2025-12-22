@@ -160,7 +160,7 @@ export function LandingPage() {
               </div>
               
               <h1 className="text-gray-900 mb-6">
-                BEELINE Benchmarking & Visualization Platform
+                GENEVAL Benchmarking & Visualization Platform
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -254,7 +254,7 @@ export function LandingPage() {
       <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-gray-900 mb-4">What BEELINE Does</h2>
+            <h2 className="text-gray-900 mb-4">What GENEVAL Does</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-6">
               A unified environment for evaluating, comparing, and visualizing the performance of gene regulatory network (GRN) inference algorithms.
             </p>
@@ -445,7 +445,7 @@ export function LandingPage() {
           <div className="text-center mb-16">
             <h2 className="text-gray-900 mb-4">Getting Started</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose your path and start exploring BEELINE today
+              Choose your path and start exploring GENEVAL today
             </p>
           </div>
           
@@ -486,7 +486,7 @@ export function LandingPage() {
                   <Activity className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-white">BEELINE</div>
+                  <div className="text-white">GENEVAL</div>
                   <div className="text-xs text-gray-400">Benchmarking Platform</div>
                 </div>
               </div>
@@ -523,14 +523,14 @@ export function LandingPage() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">GitHub</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Support</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Cite BEELINE</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Cite GENEVAL</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">License</a></li>
               </ul>
             </div>
           </div>
           
           <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-            <p>© 2024 BEELINE Platform. Licensed under MIT.</p>
+            <p>© 2025 GENEVAL Platform. Licensed under MIT.</p>
             <p className="flex items-center gap-2">
               <span>Powered by</span>
               <span className="text-purple-400">BEELINE</span>

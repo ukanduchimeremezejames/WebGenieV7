@@ -167,7 +167,7 @@ export function MainDashboard() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-gray-900 mb-2">Dashboard</h1>
-        <p className="text-gray-600">Overview of BEELINE benchmarking activity</p>
+        <p className="text-gray-600">Overview of GENEVAL benchmarking activity</p>
       </div>
       
       {/* Metric Cards */}
