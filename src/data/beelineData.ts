@@ -15,6 +15,7 @@ export const BEELINE_DATASETS = [
     description: 'Synthetic benchmark dataset with 100 genes and 500 samples',
     sparklineData: [12, 18, 24, 31, 38, 45, 52, 58, 64, 71]
   },
+  
   {
     id: 'beeline-synthetic-500',
     name: 'BEELINE_Synthetic_500',

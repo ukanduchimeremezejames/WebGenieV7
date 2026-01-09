@@ -5,6 +5,7 @@ import { APIConnectionStatus } from './APIConnectionStatus';
 export function Navigation() {
   const location = useLocation();
   
+  
   const navItems = [
     { path: '/dashboard', label: 'Dashboard' },
     { path: '/datasets', label: 'Datasets' },

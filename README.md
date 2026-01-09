@@ -1,7 +1,7 @@
 
   # WebGenie
 
-  This is a code bundle for WebGenie, with the recent update concerning Datasets' Metadata as well as the new imputs done to the landing page with the implementation of the continous "size range" in the dashboard page, together with the intigration of the fastAPI backend and the postgreSQL database, wih provision made for cloud deployment to Azure.
+  This is a code bundle for WebGenie, with the recent update concerning Datasets' Metadata as well as the new imputs done to the landing page with the implementation of the continous "size range" in the dashboard page, together with the intigration of the fastAPI backend and the postgreSQL database, wih provision made for cloud deployment to Azure. More like dsrk mode sre being processed.
 
   ## Running the code
 
